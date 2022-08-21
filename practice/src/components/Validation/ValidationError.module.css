@@ -1,0 +1,23 @@
+.back-drop {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+}
+
+.error-wrap {
+  width: 50%;
+  height: 30%;
+  position: absolute;
+  background-color: white;
+  box-shadow: 2px 2px black;
+  border: 1px solid black;
+}
+
+.theme {
+  background-color: purple;
+  color: white;
+}
