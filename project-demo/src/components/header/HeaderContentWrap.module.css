@@ -1,0 +1,15 @@
+.header__content {
+  height: 100%;
+  width: 100%;
+  background-color: inherit;
+
+  display: flex;
+  align-items: center;
+}
+
+.header__content li {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

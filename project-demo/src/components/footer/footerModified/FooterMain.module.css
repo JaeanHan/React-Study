@@ -1,0 +1,13 @@
+.footer__main {
+  width: 100%;
+  height: 186px;
+
+  padding: 20px 60px 0 60px;
+  /* 38px */
+  background-color: #1c1d1f;
+
+  display: flex;
+  justify-content: space-between;
+}
+
+

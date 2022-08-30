@@ -1,0 +1,23 @@
+.header__content__item__wrap {
+  margin-left: 24px;
+  height: 100%;
+  width: auto;
+}
+
+.stylessButton {
+  background: none;
+  padding: 0;
+  border: none;
+  margin: 0;
+  cursor: pointer;
+  color: #353535;
+  font-size: 15px;
+  -webkit-letter-spacing: -0.3px;
+  -moz-letter-spacing: -0.3px;
+  -ms-letter-spacing: -0.3px;
+  letter-spacing: -0.3px;
+}
+
+.stylessButton:last-child {
+  margin-right: 24px;
+}

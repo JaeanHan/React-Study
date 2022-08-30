@@ -1,0 +1,21 @@
+.footer__header {
+  width: 100%;
+  height: 62px;
+
+  text-align: center;
+  line-height: 62px;
+
+  background-color: #101113;
+}
+
+.footer__header__banner {
+  font-size: 19px;
+  font-weight: 700;
+
+  color: #d1d1d2;
+}
+
+.footer__header__banner > em {
+  color: #ff0558;
+  font-style: normal;
+}
