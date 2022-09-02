@@ -10,6 +10,7 @@ const info = [
   "주식회사 왓챠",
   "대표 박태훈",
   "서울특별시 서초구 강남대로 343 신덕빌딩 3층",
+  "qweqweqe",
 ];
 const registration = ["사업자 등록 번호 211-88-66013"];
 const hi = ["© 2022 by WATCHA, Inc. All rights reserved."];
