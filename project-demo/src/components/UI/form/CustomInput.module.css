@@ -1,18 +1,22 @@
 .input--wrap {
   width: 100%;
+  padding: 4px 0;
 }
 
 .input__label {
   display: flex;
   -webkit-box-align: center;
   align-items: center;
-  justify-content: space-between;
   background: rgb(245, 245, 245);
   box-sizing: border-box;
   width: 100%;
   height: 44px;
   padding: 0px 12px;
   border-radius: 6px;
+}
+
+.input__main--wrap {
+  width: 335px;
 }
 
 .input__main {
@@ -22,8 +26,21 @@
   letter-spacing: -0.6px;
   line-height: 21px;
   width: 100%;
+  /* width: 311px; */
   overflow: hidden;
   caret-color: rgb(255, 47, 110);
+
+  border: none;
+  outline: none;
+  /* display: flex; */
+  /* flex: 1 1 0%; */
+}
+
+.input__clear--wrap {
+  height: 100%;
+  width: 24px;
+  display: flex;
+  align-items: center;
 }
 
 .input__clear {
@@ -35,11 +52,28 @@
   cursor: pointer;
 }
 
-.input__check {
+.input__validation--wrap {
+  width: 24px;
+  height: 100%;
+  margin-left: 24px;
+  display: flex;
+  align-items: center;
+}
+
+.input__validation {
   display: inline-block;
-  background: url(../../../images/input-state-ok.svg) center center / cover
-    no-repeat;
   width: 24px;
   height: 24px;
   cursor: pointer;
+}
+
+.error__message {
+  -webkit-text-size-adjust: 100%;
+  text-align: left;
+  color: rgb(245, 0, 0);
+  font-size: 13px;
+  font-weight: 400;
+  letter-spacing: -0.2px;
+  line-height: 18px;
+  margin: 6px 12px 4px;
 }
