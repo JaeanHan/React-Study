@@ -99,6 +99,7 @@
   margin: 0px;
   cursor: pointer;
   color: rgb(255, 47, 110);
+  font-weight: 500;
 }
 
 .language__button--wrap {
@@ -146,12 +147,24 @@
 }
 
 .find__password--button {
+  -webkit-text-size-adjust: 100%;
+  --sat: env(safe-area-inset-top);
+  --sal: env(safe-area-inset-left);
+  --sar: env(safe-area-inset-right);
+  --sab: env(safe-area-inset-bottom);
+  font-family: inherit;
+  overflow: visible;
+  text-transform: none;
+  -webkit-appearance: button;
+  line-height: normal;
+  font-size: 100%;
   background: none;
   padding: 0px;
   border: none;
   margin: 0px;
   cursor: pointer;
   color: rgb(255, 47, 110);
+  font-weight: 500;
 }
 
 .modal__line {

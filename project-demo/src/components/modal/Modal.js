@@ -105,6 +105,7 @@ const SignupModal = (props) => {
             {mode && <LanguageButton />}
             <button className={style["modal__form--button"]}>{title}</button>
           </form>
+          {!mode && <FindPasswordButton />}
           <div className={style.modal__switch}>
             {mode ? "이미 가입 하셨나요? " : "계정이 없으신가요? "}
             <button
@@ -115,7 +116,6 @@ const SignupModal = (props) => {
               {mode ? "로그인" : "회원가입"}
             </button>
           </div>
-          {!mode && <FindPasswordButton />}
           <hr className={style.modal__line} />
         </div>
         <ul className={style["modal__oauth--wrap"]}>

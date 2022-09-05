@@ -32,8 +32,14 @@
 
   border: none;
   outline: none;
+  border-radius: 6px;
   /* display: flex; */
   /* flex: 1 1 0%; */
+}
+
+.input__main--invalid {
+  background: rgb(255, 240, 240);
+  border: 1px solid rgb(245, 0, 0);
 }
 
 .input__clear--wrap {

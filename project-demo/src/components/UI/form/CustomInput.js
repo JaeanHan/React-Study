@@ -11,7 +11,13 @@ const ErrorMessage = (props) => {
 const CustomInput = forwardRef((props, ref) => {
   return (
     <div className={style["input--wrap"]}>
-      <label className={style.input__label}>
+      <label
+        className={`${style.input__label} ${
+          props.isValid != null &&
+          !props.isValid &&
+          style["input__main--invalid"]
+        }`}
+      >
         <div className={style["input__main--wrap"]}>
           <input
             type={props.type}

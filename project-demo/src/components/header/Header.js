@@ -17,57 +17,60 @@ const emailRegex =
   /([\w-.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/;
 
 const nameReducer = (state, action) => {
-  if (action.type === USER_INPUT) {
+  const enteredName = action?.value?.trim();
+  if (action.type === USER_INPUT && enteredName) {
     return {
-      value: action.value.trim(),
-      isValid: action.value.trim().length > 1,
+      value: enteredName,
+      isValid: enteredName.length > 1,
     };
   }
   if (action.type === INPUT_BLUR) {
-    console.log(
-      `name:: state.value: ${state.value} state.isValid: ${state.isValid}`
-    );
     return {
       value: state.value ?? "",
-      isValid: state.isValid ?? null,
+      isValid:
+        state.value === "" && state.isValid === false
+          ? null
+          : state.isValid ?? null,
     };
   }
   return { value: "", isValid: null };
 };
 
 const emailReducer = (state, action) => {
-  if (action.type === USER_INPUT) {
+  const enteredEmail = action?.value?.trim();
+  if (action.type === USER_INPUT && enteredEmail) {
     return {
-      value: action.value.trim(),
-      isValid: emailRegex.test(action.value.trim()),
+      value: enteredEmail,
+      isValid: emailRegex.test(enteredEmail),
     };
   }
   if (action.type === INPUT_BLUR) {
-    console.log(
-      `email:: state.value: ${state.value} state.isValid: ${state.isValid} `
-    );
     return {
       value: state.value ?? "",
-      isValid: state.isValid ?? null,
+      isValid:
+        state.value === "" && state.isValid === false
+          ? null
+          : state.isValid ?? null,
     };
   }
   return { value: "", isValid: null };
 };
 
 const passwordReducer = (state, action) => {
-  if (action.type === USER_INPUT) {
+  const enteredPassword = action?.value?.trim();
+  if (action.type === USER_INPUT && enteredPassword) {
     return {
-      value: action.value.trim(),
-      isValid: passwordRegex.test(action.value.trim()),
+      value: enteredPassword,
+      isValid: passwordRegex.test(enteredPassword),
     };
   }
   if (action.type === INPUT_BLUR) {
-    console.log(
-      `password:: state.value: ${state.value} state.isValid: ${state.isValid}`
-    );
     return {
       value: state.value ?? "",
-      isValid: state.isValid ?? null,
+      isValid:
+        state.value === "" && state.isValid === false
+          ? null
+          : state.isValid ?? null,
     };
   }
   return { value: "", isValid: null };
