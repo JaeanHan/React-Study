@@ -1,13 +1,12 @@
-import FooterJong from "./components/footer/FooterJong";
 import FooterJae from "./components/footer/footerModified/FooterJae";
 import Header from "./components/header/Header";
-import Modal from "./components/modal/Modal";
+import Main from "./components/main/Main";
 
 function App() {
   return (
-    <div className="App" style={{ width: "100%", height: "100vh" }}>
+    <div className="App">
       <Header />
-      <FooterJong />
+      <Main />
       <FooterJae />
     </div>
   );
