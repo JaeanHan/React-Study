@@ -24,6 +24,9 @@ const nameReducer = (state, action) => {
     };
   }
   if (action.type === INPUT_BLUR) {
+    console.log(
+      `name:: state.value: ${state.value} state.isValid: ${state.isValid}`
+    );
     return {
       value: state.value ?? "",
       isValid: state.isValid ?? null,
@@ -40,6 +43,9 @@ const emailReducer = (state, action) => {
     };
   }
   if (action.type === INPUT_BLUR) {
+    console.log(
+      `email:: state.value: ${state.value} state.isValid: ${state.isValid} `
+    );
     return {
       value: state.value ?? "",
       isValid: state.isValid ?? null,
@@ -56,6 +62,9 @@ const passwordReducer = (state, action) => {
     };
   }
   if (action.type === INPUT_BLUR) {
+    console.log(
+      `password:: state.value: ${state.value} state.isValid: ${state.isValid}`
+    );
     return {
       value: state.value ?? "",
       isValid: state.isValid ?? null,
@@ -66,6 +75,8 @@ const passwordReducer = (state, action) => {
 
 function Header() {
   const [modal, setModal] = useState(false);
+  const [signinState, setSigninState] = useState(false);
+  const [signupState, setSignupState] = useState(false);
 
   const [nameState, dispatchName] = useReducer(nameReducer, {
     value: "",
@@ -89,14 +100,16 @@ function Header() {
   const passwordInputRef = useRef();
 
   useEffect(() => {
-    const changeFormState = setTimeout(() => {
-      // setSigninForm(emailIsValid && passwordIsValid);
-      // setSignupForm(nameIsValid && emailIsValid && passwordIsValid);
-      // console.log(signupForm);
+    const identidier = setTimeout(() => {
+      // console.log("check form validity");
+      setSigninState(emailIsValid && passwordIsValid);
+      setSignupState(emailIsValid && passwordIsValid && nameIsValid);
     }, 500);
 
-    return clearTimeout(changeFormState);
-  }, [nameIsValid, emailIsValid, passwordIsValid]);
+    return () => {
+      clearTimeout(identidier);
+    };
+  }, [emailIsValid, passwordIsValid, nameIsValid]);
 
   const nameChangeHandler = (e) => {
     dispatchName({
@@ -146,18 +159,15 @@ function Header() {
 
   const submitHandler = (e) => {
     e.preventDefault();
-    // alert(
-    //   ` nameISValid: ${nameIsValid}, emailIsValid: ${emailIsValid}, passwordisValid ${passwordIsValid}`
-    // );
 
-    if (nameIsValid && emailIsValid && passwordIsValid) {
-      //회원 가입 요청 보내기
+    if (signupState) {
+      //회원 가입 요청 보내기 api/v1/user/join
       alert("회원가입 기능 구현중 입니다!");
       return;
     }
 
-    if (emailIsValid && passwordIsValid) {
-      //로그인 요청 보내기
+    if (signinState) {
+      //로그인 요청 보내기 api/v1/user/login
       alert("로그인 기능 구현중 입니다!");
       return;
     }
